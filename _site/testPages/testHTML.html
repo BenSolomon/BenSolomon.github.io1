@@ -1,0 +1,13 @@
+#---
+layout: page
+title: testHTML
+permalink: /testHTML/
+---
+
+{% for page in site.pages %}
+  <p> {{page.path}} </p>
+{% endfor %}
+
+{% for page in site.pages %}
+  <p> {{ page.url | prepend: site.baseurl }} </p>
+{% endfor %}

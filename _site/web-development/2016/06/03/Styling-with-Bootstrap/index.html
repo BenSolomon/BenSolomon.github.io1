@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <meta name="author" content="Ben Solomon">
+
+    <title>Styling with Bootstrap</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/landing-page.css" rel="stylesheet">
+    <link href="/css/customStyle.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="/academicons/css/academicons.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Sticky footer
+    <link href="/css/sticky-footer.css" rel="stylesheet">
+    -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+	<body style="background:url(/img/sequoia.jpg); background-size:cover; background-repeat:no-repeat; background-attachment: fixed; background-position:50% 50%">
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Ben Solomon</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              
+                  
+                    <li>
+                        <a href="/about/">About Me</a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                        <a href="/blog/">Blog</a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                        <a href="/curriculumvitae/">Curriculum Vitae</a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                        <a href="/publications/">Publications</a>
+                    </li>
+                  
+                
+                  
+                
+                <li>
+                  <script language="JavaScript">
+                    var username = "benjamin.solomon.2016";
+                    var hostname = "gmail.com";
+                    var linktext = "Contact me" ;
+                    document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+                  </script>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<br>
+<br>
+
+		<section class = "container content-section text-left" style="background-color:rgba(255,255,255,0.5); font-weight:normal; padding-top:0; ">
+	    <div class = "row">
+					<div class = "col-lg-10 col-lg-offset-1">
+						 <h1 id="basic-styling-with-bootstrap">Basic styling with Bootstrap</h1>
+
+<p><strong>Including Bootstrap style in html</strong></p>
+
+<ul>
+  <li>Bootstrap can be included in a pages style by including the following in its head material <code class="highlighter-rouge">&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"&gt;</code></li>
+</ul>
+
+<p><strong>The Bootstrap grid</strong></p>
+
+<center><img src="https://s3.amazonaws.com/codecademy-content/courses/make-a-website/img/grid.svg" style="width:600px" /></center>
+<ul>
+  <li>The Bootsrap grid divides the current viewable space of an HTML page into 12 equally-sized columns</li>
+  <li>Elements are positioned and sized in this grid according to how many of the 12 columns they occupy</li>
+  <li>Bootstrap has many pre-defined classes
+    <ul>
+      <li><code class="highlighter-rouge">container</code> initiates a segment of html that will adhere to the 12 column grid</li>
+      <li><code class="highlighter-rouge">row</code> are individual rows within a container that have 12 columns worth of space</li>
+      <li><code class="highlighter-rouge">column</code> are the content that occupy the columns of a row</li>
+      <li><code class="highlighter-rouge">jumbotron</code> is a special class that spans the entire page area, not just the 12 column space</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Rows and columns</strong></p>
+
+<ul>
+  <li>The bootstrap hierarchy is container &gt; row &gt; item</li>
+  <li>The following code:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="container" style="background-color:green"&gt;
+  &lt;div class="row" style="background-color:LightGrey"&gt;
+    &lt;h1 class="col-sm-4" style="background-color:lightblue"&gt;Row1-Object1&lt;/h1&gt;
+    &lt;h1 class="col-sm-8" style="background-color:salmon"&gt;Row1-Object2&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;h1 class="col-sm-12"&gt;Row2-Object1&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="row" style="background-color:Grey"&gt;
+    &lt;h1 class="col-sm-4" style="background-color:lightblue"&gt;Row3-Object1&lt;/h1&gt;
+    &lt;h1 class="col-sm-8" style="background-color:salmon"&gt;Row3-Object2&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+</code></pre>
+</div>
+<p>generates the following output:</p>
+<html>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+<body>
+  <header class="container" style="background-color:green">
+    <div class="row" style="background-color:LightGrey">
+      <h1 class="col-sm-4" style="background-color:lightblue">Row1-Object1</h1>
+      <h1 class="col-sm-8" style="background-color:salmon">Row1-Object2</h1>
+    </div>
+    <div class="row">
+      <h1 class="col-sm-6" style="background-color:lightblue">Row3-Object1</h1>
+      <h1 class="col-sm-6" style="background-color:salmon">Row3-Object2</h1>
+    </div>
+    <div class="row" style="background-color:Grey">
+      <h1 class="col-sm-8" style="background-color:lightblue">Row3-Object1</h1>
+      <h1 class="col-sm-4" style="background-color:salmon">Row3-Object2</h1>
+    </div>
+  </header>
+</body>
+</html>
+
+<ul>
+  <li>Container - all of the content is contained in a single container class
+    <ul>
+      <li>The background color of the container is green</li>
+    </ul>
+  </li>
+  <li>Rows - notice there are 3 rows
+    <ul>
+      <li>The first and last row have their own background colors</li>
+      <li>The second row has no background-color, so you can see the green background of the parent container showing through around the column items</li>
+    </ul>
+  </li>
+  <li>Columns - each row has two column items
+    <ul>
+      <li>With each row, Object1 has more proportional space
+        <ul>
+          <li>Achieved with <code class="highlighter-rouge">col-sm-4</code> –&gt; <code class="highlighter-rouge">col-sm-6</code> –&gt; <code class="highlighter-rouge">col-sm-8</code></li>
+          <li>Object2’s space decreases to keep the sum of column sizes equal to 12</li>
+        </ul>
+      </li>
+      <li>Notice that even though the text doesn’t take up the entire span of the specified column size, that space is still occupied by the column</li>
+      <li>Notice that the text doesn’t take up the full height of the row</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Columns and viewing size</strong></p>
+
+<ul>
+  <li>The Bootstrap grid system automatically scales to the viewing area of the browser window/device</li>
+  <li>However, at a certain point, reducing the viewing area and maintaining all grid elements proportionally will shrink grid elements to an impractical scale</li>
+  <li>Column sizes specify when elements in a row should be positioned horizontally instead of further scaling down the elements</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Extra small</th>
+      <th>Small</th>
+      <th>Medium</th>
+      <th>Large</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Class</td>
+      <td><code class="highlighter-rouge">.col-xs-</code></td>
+      <td><code class="highlighter-rouge">.col-sm-</code></td>
+      <td><code class="highlighter-rouge">.col-md-</code></td>
+      <td><code class="highlighter-rouge">.col-lg-</code></td>
+    </tr>
+    <tr>
+      <td>Device</td>
+      <td>Smartphone</td>
+      <td>Tablet</td>
+      <td>Laptop/Desktop</td>
+      <td>Desktop</td>
+    </tr>
+    <tr>
+      <td>Behavior</td>
+      <td>Always horizontal</td>
+      <td>Horizontal until break</td>
+      <td>Horizontal until break</td>
+      <td>Horizontal until break</td>
+    </tr>
+    <tr>
+      <td>Minimum viewing area before break</td>
+      <td>None</td>
+      <td>750px</td>
+      <td>970px</td>
+      <td>1170px</td>
+    </tr>
+    <tr>
+      <td>Column width at viewing size</td>
+      <td>Auto</td>
+      <td>~62px</td>
+      <td>~81px</td>
+      <td>~97px</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>If a screen or browser window is smaller than the minimum viewing area of a size class, the objects in that row will be placed horizontally
+    <ul>
+      <li>Above this minimum size, the elements will be placed horizontally</li>
+    </ul>
+  </li>
+  <li>Note that the extra small class has no break point and will always scale with decreased viewing area</li>
+</ul>
+
+					</div>
+			</div>
+    </section>
+	</body>
+</html>

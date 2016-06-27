@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <meta name="author" content="Ben Solomon">
+
+    <title>Basic CSS notes</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/landing-page.css" rel="stylesheet">
+    <link href="/css/customStyle.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="/academicons/css/academicons.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Sticky footer
+    <link href="/css/sticky-footer.css" rel="stylesheet">
+    -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+	<body style="background:url(/img/sequoia.jpg); background-size:cover; background-repeat:no-repeat; background-attachment: fixed; background-position:50% 50%">
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Ben Solomon</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              
+                  
+                    <li>
+                        <a href="/about/">About Me</a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                        <a href="/blog/">Blog</a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                        <a href="/curriculumvitae/">Curriculum Vitae</a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                        <a href="/publications/">Publications</a>
+                    </li>
+                  
+                
+                  
+                
+                <li>
+                  <script language="JavaScript">
+                    var username = "benjamin.solomon.2016";
+                    var hostname = "gmail.com";
+                    var linktext = "Contact me" ;
+                    document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+                  </script>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<br>
+<br>
+
+		<section class = "container content-section text-left" style="background-color:rgba(255,255,255,0.5); font-weight:normal; padding-top:0; ">
+	    <div class = "row">
+					<div class = "col-lg-10 col-lg-offset-1">
+						 <h1 id="basic-css-notes">Basic CSS notes</h1>
+
+<h3 id="css-styling">CSS styling</h3>
+
+<p><strong>Specifying CSS</strong></p>
+
+<ul>
+  <li>CSS can be specified in multiple ways
+    <ul>
+      <li>Inline - style info is provided in actual tags
+        <ul>
+          <li><code class="highlighter-rouge">&lt;p style="color:blue;"&gt;This is blue text&lt;/p&gt;</code></li>
+          <li>
+            <p style="color:blue;">This is blue text</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Internal - all style info is provided in the head section of the same HTML doc to be styled</p>
+
+        <p>```
+  &lt;!DOCTYPE html&gt;</p>
+        <html>
+  <head>
+  <style>
+  body {background-color:lightgrey;}
+  p    {color:blue;}
+  </style>
+  </head>
+  <body>
+
+  <p>This is a paragraph.</p>
+
+  </body>
+  </html>
+        <p>```
+  * &lt;p style="color:blue"&gt;This is a paragraph.&lt;/p&gt;</p>
+      </li>
+      <li>External - all style info is provided in an additional css file
+        <ul>
+          <li>A css file can be linked by placing <code class="highlighter-rouge">&lt;link rel="stylesheet" type="text/css" hrek="location"/&gt;</code> in <code class="highlighter-rouge">&lt;head&gt;</code> material</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Style rules</strong></p>
+
+<ul>
+  <li>Basic rules follow the form:
+<code class="highlighter-rouge">
+tag {
+  property:value;
+  ...
+}
+</code>
+    <ul>
+      <li>e.g. to make all <code class="highlighter-rouge">&lt;h1&gt;</code> text red, place following in css file
+<code class="highlighter-rouge">
+h1 {
+color: red
+}
+</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Basic font styling</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">font-family: font, alt font, ...</code> can accept many named fonts
+    <ul>
+      <li>Alt fonts are used to specify a font in the case that a users system can render the primary font</li>
+      <li>Multiple alt fonts can be used</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">color: </code> can be specified with color names (<code class="highlighter-rouge">red</code>), hex code (<code class="highlighter-rouge">#FF0000</code>), or rgb (<code class="highlighter-rouge">rgb(255,0,0)</code>)</li>
+  <li><code class="highlighter-rouge">font-size: </code> can be specified at pixels (<code class="highlighter-rouge">60px</code>), relative to default browser size (<code class="highlighter-rouge">1.5rem</code>), or relative to parent element size (<code class="highlighter-rouge">0.75em</code>)
+    <ul>
+      <li>On most browsers, <code class="highlighter-rouge">1rem</code> = <code class="highlighter-rouge">16px</code></li>
+      <li>If the parent element size was <code class="highlighter-rouge">20px</code>, a child element with size <code class="highlighter-rouge">0.5em</code> would have a font size of <code class="highlighter-rouge">10px</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Class styling</strong></p>
+
+<ul>
+  <li>Instead of applying a single style to all instances of a particular tag, collections of styles can be assigned to a <code class="highlighter-rouge">class</code> that can be applied to specific sections of HTML</li>
+  <li>The general format of a class is:
+<code class="highlighter-rouge">
+.className {
+styleRule;
+...
+}
+</code>
+    <ul>
+      <li>Example to create a class that will be used to apply a font color only to a header
+  <code class="highlighter-rouge">
+  .header {
+color: #ffffff
+  }
+ </code></li>
+      <li>Invoke this style in the HTML file by
+  ```</li>
+    </ul>
+    <p>&lt;div class=header&gt;
+      &lt;h1&gt;Text&lt;/h1&gt;
+  &lt;/div&gt;
+  ```
+  * The resulting text will have color <code class="highlighter-rouge">#ffffff</code> regardless of tag</p>
+  </li>
+  <li>Multiple classes can be assigned to a single tag
+    <ul>
+      <li>All classes should be within a single set of quotation marks and separated by spaces</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Tag-specific class styling</strong></p>
+
+<ul>
+  <li>Sometimes, you do not want a component of a particular class to apply to all possible tags
+    <ul>
+      <li>E.g. You might want <code class="highlighter-rouge">&lt;h1&gt;</code> elements in a class to be red, while all other text is blue</li>
+      <li>
+        <p>Can be achieved with:</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>&lt;!-- CSS file --&gt;
+.example p {
+  color: red
+}
+
+&lt;!-- HTML file--&gt;
+&lt;div class="example"&gt;
+    &lt;p&gt;red text&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+        </div>
+        <p>or</p>
+      </li>
+    </ul>
+
+    <p>```
+  <!-- CSS file -->
+  p.example {
+    color: red
+  }</p>
+
+    <p><!-- HTML file--></p>
+    <div>
+      <p class="example">red text</p>
+  </div>
+    <p>```
+  * <code class="highlighter-rouge">.className tag {...}</code> will be applied to any instance of the specified tag that has a PARENT element with the specified className
+  * <code class="highlighter-rouge">tag.className {...}</code> will be applied to any instance of the specified tag that ITSELF has the specified className
+      * This functions the same a simply <code class="highlighter-rouge">.className {...}</code> with the exception that it can only be successfully applied to instances of the specified tag</p>
+  </li>
+  <li>May be better to give each style of a tag its own class, rather than making tag-specific exceptions
+    <ul>
+      <li>This results in longer tag attributes, but limits the amount of repeated code in the CSS file needed for every exception to a rule</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Psuedo-class selectors</strong></p>
+
+<ul>
+  <li>Psuedo-class selectors are selectors that modify classes</li>
+  <li>The <code class="highlighter-rouge">active</code> psuedo-class is a class that only applies to a class when it is actively clicked</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;style&gt;
+.ex p {color:red; position: relative}
+.ex p:active {top:5px}
+&lt;/style&gt;
+&lt;div class="ex"&gt;&lt;p&gt;I move down when clicked&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+</div>
+<style>
+.ex1 p {color:red; position: relative}
+.ex1 p:active {top:5px}
+</style>
+
+<div class="ex1"><p>I move down when clicked</p></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>* `position` sets whatever position &lt;p&gt; takes as relative, so that when a `top` position is applied to the active psuedo-class, it moves relative to its starting position
+</code></pre>
+</div>
+
+<p><strong>Backgrounds</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">background-image</code> can add an image as a background-image</li>
+  <li><code class="highlighter-rouge">background-size</code> determines how the image fills the background spaces</li>
+</ul>
+
+<p><strong>ID selectors</strong></p>
+
+<ul>
+  <li>ID selectors are similar to classes, in that they allow you to specify style to a particular element</li>
+  <li>However, unlike classes, ID selectors <strong>can be used only once</strong></li>
+  <li>Therefore, ID selectors are useful for one-time exceptions to a class rule</li>
+  <li>ID selectors are specified with the <code class="highlighter-rouge">#</code> symbol in the css info
+    <ul>
+      <li>E.g. the following code will produce red text, even though the class rule specifies blue text
+  ```
+  p {
+color: blue
+  }
+  #exception {
+color: red
+  }</li>
+    </ul>
+
+    <p id="exception">This text is really red</p>
+    <p>```</p>
+  </li>
+</ul>
+
+<p><strong>Page spacing</strong></p>
+
+<ul>
+  <li>Sections of a rendered HTML page are oriented according to the “box model”</li>
+</ul>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/W3C_and_Internet_Explorer_box_models.svg/2000px-W3C_and_Internet_Explorer_box_models.svg.png" alt="The Box Model" style="width:300px" /></center>
+
+<ul>
+  <li>Border can add a border of a given thickness, pattern, and color around content
+    <ul>
+      <li>Basic form is <code class="highlighter-rouge">border: thickness pattern color</code></li>
+      <li>E.g <code class="highlighter-rouge">border: 5px solid #F00</code></li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="border:5px solid #F00" /></center>
+
+<ul>
+  <li>Padding adds space between content and its border
+    <ul>
+      <li>Basic form is <code class="highlighter-rouge">padding: top right bottom left</code></li>
+      <li>A single padding value will be applied equally to all sides</li>
+      <li>Eg. <code class="highlighter-rouge">padding: 20px</code></li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="border:5px solid #F00; padding: 20px " /></center>
+
+<ul>
+  <li>Margin determines how much space is placed between the content:padding:boarder element and other elements
+    <ul>
+      <li>Basic form is <code class="highlighter-rouge">margin: top right bottom left</code></li>
+      <li>A single margin value will be applied equally to all sides</li>
+      <li>Eg. <code class="highlighter-rouge">margin: 5rem</code> (notice distance from this line)</li>
+    </ul>
+  </li>
+</ul>
+
+<center><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="border:5px solid #FFF; padding: 20px; margin: 5rem " /></center>
+
+<p><strong>Alignment</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">display: inline</code> allows sequential items to be placed horizontally
+```
+    <style>.ex li {display: inline}</style>
+
+    <div style="border:1px solid #F00; padding:5px; width:250px">
+  <p>Default</p>
+  <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+  </ul>
+  <p>Inline</p>
+  <ul class="ex">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+  </ul>
+</div>
+    <p>```</p>
+    <style>.ex li {display: inline}</style>
+
+    <div style="border:1px solid #F00; padding:5px; width:250px">
+    <p>Default</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <p>Inline</p>
+    <ul class="ex">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+  </div>
+  </li>
+  <li>The <code class="highlighter-rouge">float</code> style places on object directly on top of whatever element it would otherwise follow
+```
+    <style>.ex li {display: inline}</style>
+
+    <div style="border:1px solid #F00; padding:5px; width:250px">
+  <p>Default</p>
+  <ul>
+      <li>Item 1</li>
+      <li>Item 2</li><p style="float:right">Float</p>
+      <li>Item 3</li>
+  </ul>
+  <p>Inline</p>
+  <ul class="ex">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li><p style="float:right">Float</p>
+  </ul>
+</div>
+    <p>```</p>
+  </li>
+</ul>
+<style>.ex li {display: inline}</style>
+
+<div style="border:1px solid #F00; padding:5px; width:250px">
+  <p>Default</p>
+  <ul>
+      <li>Item 1</li>
+      <li>Item 2</li><p style="float:right">Float</p>
+      <li>Item 3</li>
+  </ul>
+  <p>Inline</p>
+  <ul class="ex">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li><p style="float:right">Float</p>
+  </ul>
+</div>
+
+<ul>
+  <li>The <code class="highlighter-rouge">flex</code> layout allows for even distribution of items within a container
+    <ul>
+      <li>Begin with the style <code class="highlighter-rouge">display: flex</code> in the parent items</li>
+    </ul>
+
+    <p>```</p>
+    <div style="display:flex">
+    <img />
+    <img />
+  &lt;/div
+  ```
+</div>
+  </li>
+</ul>
+<div style="display:flex"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="margin:1rem" /><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="margin:1rem" /></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>* The default setting is to distribute flex horizontally, but without further attributes, this can distribute elements off the pages
+* The additional style `flex-wrap: wrap` will wrap any off page elements to the next row
+</code></pre>
+</div>
+<div style="display:flex; flex-wrap:wrap"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="margin:1rem" /><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="margin:1rem" /></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>* `justify-content: center` can align the wrapped flex elements to the center
+</code></pre>
+</div>
+<div style="display:flex; flex-wrap:wrap; justify-content:center"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="margin:1rem" /><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-3/moss2.jpg" style="margin:1rem" /></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>* `align items:` can help to align differently shaped elements
+    * Options include `flex-start`, `flex-end`, `center`, `stretch`, `baseline`
+</code></pre>
+</div>
+<center><img src="https://css-tricks.com/wp-content/uploads/2014/05/align-items.svg" /></center>
+
+					</div>
+			</div>
+    </section>
+	</body>
+</html>
